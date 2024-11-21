@@ -4,7 +4,7 @@ from .column_utils import get_column_names
 
 def duplicate_check(target_file, log_file):
     """
-    Checks for duplicate rows in the target file using SQL.
+    Checks for duplicate records in the target file using SQL.
     """
     try:
         target_df = pd.read_csv(target_file)
