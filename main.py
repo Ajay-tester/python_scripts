@@ -31,12 +31,12 @@ if __name__ == "__main__":
     status, message = count_check(source_table, target_table, db_config, count_log_path)
     log_message(status, message)
 
+    # Duplicate Check
+    status, message = duplicate_check(target_table, db_config, duplicate_log_path)
+    log_message(status, message)
+
     # # Accuracy Validation
     # status, message = accuracy_check(source_table, target_table, db_config, accuracy_log_path)
-    # log_message(status, message)
-
-    # # Duplicate Check
-    # status, message = duplicate_check(target_table, db_config, duplicate_log_path)
     # log_message(status, message)
 
     # # Null Check
