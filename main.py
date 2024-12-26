@@ -6,33 +6,43 @@ from etl_validation.table_difference_validation import difference_check
 from etl_validation.logger import log_message
 
 if __name__ == "__main__":
-    source_file_path = "CSV_files/source_employees.csv"
-    target_file_path = "CSV_files/target_employees.csv"
-    mandatory_column = "CSV_files/Not_null_columns.csv"
-    
-    #log_files
+    # Database configuration
+    db_config = {
+        "username": "system",
+        "password": "system",  # Replace with your actual password
+        "dsn": "localhost:1521/xepdb1"  # Update with your database's DSN
+    }
+
+    # Source and Target tables in the database
+    source_table = "HR.EMPLOYEES"
+    target_table = "TARGET.TARGET_EMPLOYEES"
+
+    # Mandatory columns for the Null check
+    mandatory_columns_table = "mandatory_columns"
+
+    # Log file paths
     count_log_path = "log_files/count_log.csv"
     accuracy_log_path = "log_files/accuracy_log.csv"
     duplicate_log_path = "log_files/duplicate_log.csv"
     not_null_log_path = "log_files/not_null_log.csv"
-    table_difference_log_path ="log_files/table_difference_log.csv"
+    table_difference_log_path = "log_files/table_difference_log.csv"
 
     # Count Validation
-    status, message = count_check(source_file_path, target_file_path, count_log_path)
+    status, message = count_check(source_table, target_table, db_config, count_log_path)
     log_message(status, message)
 
-    # Accuracy Validation
-    status, message = accuracy_check(source_file_path, target_file_path, accuracy_log_path)
-    log_message(status, message)
+    # # Accuracy Validation
+    # status, message = accuracy_check(source_table, target_table, db_config, accuracy_log_path)
+    # log_message(status, message)
 
-    # Duplicate Check
-    status, message = duplicate_check(target_file_path, duplicate_log_path)
-    log_message(status, message)
+    # # Duplicate Check
+    # status, message = duplicate_check(target_table, db_config, duplicate_log_path)
+    # log_message(status, message)
 
-    # Null Check
-    status, message = Null_check(target_file_path,mandatory_column,not_null_log_path)
-    log_message(status, message)
+    # # Null Check
+    # status, message = Null_check(target_table, mandatory_columns_table, db_config, not_null_log_path)
+    # log_message(status, message)
 
-    # Table difference check source minus target and Vice Versa
-    status, message = difference_check(source_file_path,target_file_path,table_difference_log_path)
-    log_message(status, message)
+    # # Table Difference Validation (Source Minus Target and Vice Versa)
+    # status, message = difference_check(source_table, target_table, db_config, table_difference_log_path)
+    # log_message(status, message)
