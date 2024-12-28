@@ -1,0 +1,37 @@
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Virtual environment
+/venv/
+
+# Configuration and secrets
+.env
+config.local.*
+credentials.json
+
+# Test data and output
+test_data/
+test_output/
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
+# IDE/editor files
+.idea/
+.vscode/
+*.iml
+*.project
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# OS specific files
+.Trash/
