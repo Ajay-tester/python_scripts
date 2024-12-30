@@ -40,7 +40,7 @@ if __name__ == "__main__":
     target_table = "TARGET.TARGET_EMPLOYEES"
 
     # Mandatory columns for the Null check
-    mandatory_columns_table = "mandatory_columns"
+    mandatory_columns_table = "CSV_files/Not_null_columns.csv"
 
     # Log file paths
     log_dir = Path("log_files")
@@ -54,10 +54,10 @@ if __name__ == "__main__":
 
     # Run validations
     validations = [
-        ("Count Validation", count_check, [source_table, target_table, db_config, count_log_path]),
-        ("Duplicate Check", duplicate_check, [target_table, db_config, duplicate_log_path]),
+          ("Count Validation", count_check, [source_table, target_table, db_config, count_log_path]),
+          ("Duplicate Check", duplicate_check, [target_table, db_config, duplicate_log_path]),
+          ("Null Check", Null_check, [target_table, mandatory_columns_table, db_config, not_null_log_path]),
         # ("Accuracy Validation", accuracy_check, [source_table, target_table, db_config, accuracy_log_path]),
-        # ("Null Check", Null_check, [target_table, mandatory_columns_table, db_config, not_null_log_path]),
         # ("Table Difference Validation", difference_check, [source_table, target_table, db_config, table_difference_log_path]),
     ]
 
