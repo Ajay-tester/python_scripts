@@ -3,14 +3,24 @@
 __pycache__/
 
 # Virtual environment
-/venv/
+venv/
+*.venv/
 
 # Configuration and secrets
 .env
+.env.*
 config.local.*
 credentials.json
 
-# Test data and output
+# CSV files (data files that might not need to be versioned)
+CSV_files/*.csv
+
+# Logs
+log_files/*.csv
+logs/
+*.log
+
+# Test data and output (if applicable)
 test_data/
 test_output/
 
@@ -28,10 +38,6 @@ tmp/
 # System files
 .DS_Store
 Thumbs.db
-
-# Logs
-logs/
-*.log
 
 # OS specific files
 .Trash/
