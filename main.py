@@ -6,7 +6,7 @@ from etl_validation.count_validation import count_check
 from etl_validation.accuracy_validation import accuracy_check
 from etl_validation.duplicate_validation import duplicate_check
 from etl_validation.null_check_validation import Null_check
-from etl_validation.table_difference_validation import difference_check
+# from etl_validation.table_difference_validation import difference_check
 from etl_validation.logger import log_message
 
 # Load environment variables early
