@@ -45,7 +45,7 @@ def Null_check(target_table, mandatory_columns_file, db_config, log_file):
         FROM {target_table}
         WHERE {" OR ".join(null_conditions)}
         """
-
+        
         # Execute the SQL query to find null records
         null_records = db.execute_query(null_query)
 

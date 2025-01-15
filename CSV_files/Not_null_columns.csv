@@ -1,1 +1,7 @@
-employee_id,phone_number,email,hire_date,manager_id,job_id,salary
+EMPLOYEE_ID
+PHONE_NUMBER
+EMAIL
+HIRE_DATE
+MANAGER_ID
+JOB_ID
+SALARY
