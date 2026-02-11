@@ -1,0 +1,5 @@
+# Requirements for ETL Validation Framework (from README)
+oracledb
+pandas
+pandasql
+python-dotenv
